@@ -4,9 +4,11 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-clap = { version = "4.5", features = ["derive"] }
-aes-gcm = "0.10"
-argon2 = "0.5"
-rand = "0.8"
-thiserror = "1.0"
-zeroize = "1.7"
+clap = { version = "4.5.54", features = ["derive"] }
+aes-gcm = "0.10.3"
+argon2 = "0.5.3"
+rand = "0.8.5"
+thiserror = "1.0.69"
+zeroize = "1.8.2"
+dialoguer = "0.11.0"
+rpassword = "7.4.0"

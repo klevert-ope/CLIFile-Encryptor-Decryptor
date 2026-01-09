@@ -1,10 +1,15 @@
 use std::fs;
-use std::path::PathBuf;
+use std::path::Path;
+use crate::error::CryptoError;
 
-pub fn read_file(path: &PathBuf) -> std::io::Result<Vec<u8>> {
-    fs::read(path)
+/// Reads the entire contents of a file into memory.
+pub fn read_file(path: &Path) -> Result<Vec<u8>, CryptoError> {
+    let data = fs::read(path)?;
+    Ok(data)
 }
 
-pub fn write_file(path: &PathBuf, data: &Vec<u8>) -> std::io::Result<()> {
-    fs::write(path, data)
+/// Writes a byte buffer to a file, replacing it if it already exists.
+pub fn write_file(path: &Path, data: &[u8]) -> Result<(), CryptoError> {
+    fs::write(path, data)?;
+    Ok(())
 }
